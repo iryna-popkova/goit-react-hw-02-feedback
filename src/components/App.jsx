@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import { Section } from './sectionTitle';
-import { Notification } from './notificationMessage';
-import { Statistics } from './statistics';
-import { FeedbackOptions } from './feedbackOptions ';
+import { Section } from './Title/sectionTitle';
+import { Notification } from './NotificationMsg/notificationMessage';
+import { Statistics } from './Statistics/statistics';
+import { FeedbackOptions } from './FeedbackOptions/feedbackOptions ';
 export class App extends Component {
   state = {
     good: 0,
@@ -11,9 +11,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  onleaveFeedback = ({ target: { name } }) => {
+  onleaveFeedback = option => {
     this.setState(prevState => ({
-      [name]: prevState[name] + 1,
+      [option]: prevState[option] + 1,
     }));
   };
 
